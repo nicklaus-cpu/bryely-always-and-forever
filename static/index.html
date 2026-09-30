@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryley ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ff4fa3">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png">
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="overlay">
+            <p class="small">A LITTLE PIECE OF MY HEART</p>
+
+            <h1>Bryley</h1>
+
+            <p class="subtitle">
+                A story written in love, memories and moments.
+            </p>
+
+            <button onclick="enterApp()">Enter ❤️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js")
+            .then(() => console.log("Bryley PWA ready"))
+            .catch(error => console.error("Bryley PWA error:", error));
+    });
+}
+</script>
+
+</body>
+</html>

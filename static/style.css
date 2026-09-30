@@ -1,0 +1,656 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #080308;
+    color: white;
+    overflow-x: hidden;
+overflow-y: auto;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background:
+        radial-gradient(circle at center, rgba(255, 20, 147, 0.28), transparent 45%),
+        linear-gradient(135deg, #080308, #1a0614, #080308);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    padding: 30px;
+    animation: fadeIn 2s ease;
+}
+
+.small {
+    color: #ff69b4;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 72px;
+    color: #ff69b4;
+    text-shadow:
+        0 0 10px rgba(255, 105, 180, 0.7),
+        0 0 30px rgba(255, 20, 147, 0.5);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    max-width: 350px;
+    margin: auto;
+    color: #f5dce9;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 35px;
+    padding: 14px 38px;
+    border: 1px solid #ff69b4;
+    border-radius: 30px;
+    background: #ff1493;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255, 20, 147, 0.8);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.dashboard {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at center, rgba(255, 20, 147, 0.22), transparent 45%),
+        #080308;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.dashboard-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.welcome {
+    color: #f5dce9;
+    margin-bottom: 35px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+.navigation {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation button {
+    margin-top: 0;
+    min-width: 130px;
+}}
+
+.menu button {
+    width: 100%;
+    margin-top: 0;
+    background: rgba(255, 20, 147, 0.12);
+    backdrop-filter: blur(10px);
+}
+.page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(255, 20, 147, 0.22), transparent 45%),
+        #080308;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.page-content,
+.poem-content {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.poem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.poem-button {
+    width: 100%;
+    padding: 18px;
+    margin: 0;
+    background: rgba(255, 20, 147, 0.10);
+    border: 1px solid rgba(255, 105, 180, 0.35);
+    color: white;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: none;
+}
+
+.poem-button:hover {
+    background: rgba(255, 20, 147, 0.25);
+    transform: translateY(-2px);
+}
+
+.poem-content {
+    padding-top: 30px;
+}
+
+.poem-content h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.poem-text {
+    color: #f8dce9;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.poem-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.poem-navigation button,
+.back-button {
+    margin-top: 0;
+    padding: 11px 20px;
+    font-size: 14px;
+}
+
+.back-button {
+    background: transparent;
+    box-shadow: none;
+}
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 30px 0;
+}
+
+.music-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    border-radius: 16px;
+    background: rgba(255, 20, 147, 0.10);
+}
+
+.track-number {
+    color: #ff69b4;
+    font-size: 18px;
+    width: 25px;
+}
+
+.track-info {
+    flex: 1;
+    text-align: left;
+}
+
+.track-info h3 {
+    margin: 0;
+    color: white;
+}
+
+.track-info p {
+    margin-top: 5px;
+    color: #e8b8cf;
+    font-size: 13px;
+}
+
+.play-button {
+    margin: 0;
+    padding: 10px 14px;
+    border-radius: 50%;
+}
+/* DREAMY GIRLY MUSIC */
+
+.music-page {
+    min-height: 100vh;
+    padding: 35px 20px;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255, 182, 193, 0.45), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(221, 160, 221, 0.35), transparent 35%),
+        linear-gradient(135deg, #fff0f6, #fce4ec, #f8e8ff);
+    color: #5a2948;
+}
+
+.music-header {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+.music-decoration {
+    font-size: 22px;
+    letter-spacing: 8px;
+    margin-bottom: 25px;
+}
+
+.music-page .small {
+    color: #c05a91;
+    letter-spacing: 4px;
+}
+
+.music-page h1 {
+    color: #a83f73;
+    text-shadow: 0 4px 15px rgba(190, 80, 140, 0.25);
+}
+
+.music-intro {
+    color: #81516b;
+    font-size: 16px;
+}
+
+.music-list {
+    max-width: 600px;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.music-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(180, 80, 130, 0.12);
+    color: #5a2948;
+    text-align: left;
+    margin-top: 0;
+}
+
+.music-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.music-number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5b6d2;
+    color: white;
+    font-weight: bold;
+}
+
+.music-info {
+    flex: 1;
+}
+
+.music-info h3 {
+    margin: 0;
+    color: #713653;
+}
+
+.music-info p {
+    margin: 5px 0 0;
+    color: #9a6680;
+    font-size: 13px;
+}
+
+.music-arrow {
+    color: #d45b96;
+    font-size: 24px;
+}
+
+.music-home {
+    text-align: center;
+}
+
+.music-home button {
+    margin-top: 0;
+    background: #d45b96;
+}
+/* INDIVIDUAL SONG PAGE */
+
+.song-page {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background:
+        radial-gradient(circle at top, rgba(255, 182, 193, 0.5), transparent 35%),
+        radial-gradient(circle at bottom, rgba(221, 160, 221, 0.4), transparent 40%),
+        linear-gradient(145deg, #fff1f7, #f8e5f2, #eee3fa);
+    color: #5a2948;
+    text-align: center;
+}
+
+.song-decoration {
+    font-size: 24px;
+    letter-spacing: 7px;
+    margin-bottom: 30px;
+}
+
+.album-heart {
+    width: 150px;
+    height: 150px;
+    margin: 35px auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+    color: white;
+    background:
+        radial-gradient(circle, #f8b6d2, #d45b96);
+    box-shadow:
+        0 15px 40px rgba(190, 80, 140, 0.3),
+        0 0 35px rgba(255, 182, 193, 0.6);
+}
+
+.song-page h1 {
+    color: #9f416f;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.song-artist {
+    color: #93627c;
+    font-size: 17px;
+}
+
+.song-note {
+    max-width: 320px;
+    margin: 25px auto;
+    color: #8b6077;
+    line-height: 1.6;
+}
+
+.song-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 35px 0;
+}
+
+.song-controls button {
+    margin-top: 0;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    color: #a83f73;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(180, 80, 130, 0.15);
+}
+
+.song-controls .main-play {
+    width: 72px;
+    height: 72px;
+    font-size: 25px;
+    background: #d45b96;
+    color: white;
+    box-shadow: 0 10px 30px rgba(190, 80, 140, 0.35);
+}
+
+.song-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.song-navigation button {
+    margin-top: 0;
+    padding: 11px 18px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #8d4267;
+}
+.private-lock-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at center, rgba(255, 20, 147, 0.25), transparent 45%),
+        linear-gradient(145deg, #080308, #1a0614, #080308);
+    color: white;
+    text-align: center;
+}
+
+.private-lock-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 25px;
+    border: 1px solid rgba(255, 105, 180, 0.25);
+    border-radius: 25px;
+    background: rgba(255, 20, 147, 0.07);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(255, 20, 147, 0.15);
+}
+
+.private-lock-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.private-lock-box h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.private-lock-box > p {
+    color: #f5dce9;
+    line-height: 1.6;
+}
+
+#privatePhrase {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 18px;
+    border: 1px solid rgba(255, 105, 180, 0.4);
+    border-radius: 30px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+#privatePhrase::placeholder {
+    color: #b88a9f;
+}
+
+.private-lock-box button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+#lockMessage {
+    min-height: 24px;
+    margin-top: 15px;
+    color: #ff69b4;
+    font-size: 14px;
+}
+
+.private-lock-box .navigation {
+    margin-top: 20px;
+}
+.gallery-page {
+    min-height: 100vh;
+    padding: 30px 18px 50px;
+    background:
+        radial-gradient(circle at top, rgba(255, 105, 180, 0.18), transparent 35%),
+        linear-gradient(145deg, #080308, #180714, #080308);
+    color: white;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery-header h1 {
+    font-size: 42px;
+    margin: 8px 0;
+}
+
+.gallery-header p {
+    color: #e8c6d8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 18px;
+    background: rgba(255, 20, 147, 0.08);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:active img {
+    transform: scale(0.96);
+}
+
+.gallery-page .navigation {
+    max-width: 500px;
+    margin: 35px auto 0;
+}
+/* PHOTO PREVIEW */
+
+.photo-preview {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(5, 2, 6, 0.97);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo-preview #previewImage {
+    max-width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.2);
+}
+
+.preview-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 45px !important;
+    height: 45px;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.preview-counter {
+    margin-top: 15px;
+    color: #f5dce9;
+    font-size: 14px;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+}
+
+.preview-actions button {
+    flex: 1;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 12px 8px !important;
+    border-radius: 20px !important;
+    font-size: 13px;
+}
+
+.preview-actions button:first-child,
+.preview-actions button:last-child {
+    flex: 0 0 48px;
+    padding: 12px 0 !important;
+}
+
+@media (max-width: 400px) {
+
+    .preview-actions {
+        gap: 6px;
+    }
+
+    .preview-actions button {
+        font-size: 11px;
+    }
+
+}

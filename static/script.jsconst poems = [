@@ -1,0 +1,372 @@
+ley",
+        text: `Bryley, you came into my life,
+and somehow made ordinary moments feel different.
+
+Your name became a thought I carried,
+your smile became a place my mind returned to.
+
+If I could turn every feeling into words,
+I'd still need more pages to explain you.
+
+So this is my little reminder:
+some people don't just enter your story—
+they become part of it.`
+    },
+
+    {
+        title: "When I Miss You",
+        text: `There are nights when everything gets quiet,
+and somehow you're the loudest thought in my mind.
+
+I miss the little things,
+the conversations, the laughter,
+and simply knowing you're there.
+
+Distance can separate two people,
+but it can't erase what they mean to each other.
+
+So whenever you miss me too,
+look at the moon and remember—
+somewhere beneath the same sky,
+I'm thinking of you.`
+    },
+
+    {
+        title: "The Way You Smile",
+        text: `There's something about your smile
+that words never quite manage to explain.
+
+It can turn an ordinary moment
+into something worth remembering.
+
+Maybe you don't realize
+how much light you carry.
+
+But I do.
+
+And if I ever forget to tell you,
+let this poem remind you:
+your smile has always been one of my favorite things.`
+    },
+
+    {
+        title: "If Words Could Hug",
+        text: `If words could reach through a screen,
+I'd send you enough to keep you warm.
+
+I'd tell you that you're appreciated,
+that you're thought about,
+and that you matter more than you know.
+
+So until I can say everything in person,
+let these words stand in my place.
+
+Consider this poem
+a little hug from me to you.`
+    },
+
+    {
+        title: "Still Choosing You",
+        text: `Love isn't always perfect.
+Sometimes life gets complicated,
+and sometimes words fail us.
+
+But even through the difficult moments,
+there are people worth choosing.
+
+And if I had to choose again,
+I'd still find my way back to you.
+
+Not because everything is perfect,
+but because what we have means something to me.`
+    },
+
+    {
+        title: "You Feel Like Home",
+        text: `Home isn't always a place.
+Sometimes it's a person.
+
+It's the feeling of being understood,
+the comfort of being yourself,
+and the peace that comes with knowing
+someone genuinely cares.
+
+And somehow,
+you became that feeling for me.
+
+Maybe that's why
+your name feels less like a name
+and more like home.`
+    },
+
+    {
+        title: "In Every Lifetime",
+        text: `If life gave me another beginning,
+another city,
+another lifetime,
+another thousand chances—
+
+I'd still hope our paths crossed.
+
+Maybe we'd meet differently,
+maybe our story would change,
+but I'd still want to know you.
+
+Because some connections
+feel too meaningful to be accidental.`
+    },
+
+    {
+        title: "A Letter I Never Sent",
+        text: `Dear Bryley,
+
+There are things I've wanted to say
+that never seemed to fit inside a conversation.
+
+So I'm leaving them here instead.
+
+Thank you for being a part of my story.
+Thank you for the moments,
+the memories,
+and everything in between.
+
+Whatever pages come next,
+I'll always be grateful
+that your name became part of mine.
+
+With love,
+always. ❤️`
+    }
+];
+
+
+// ===============================
+// HOME
+// ===============================
+
+function enterApp() {
+    showDashboard();
+}
+
+
+function showDashboard() {
+
+    document.body.innerHTML = `
+        <div class="dashboard">
+
+            <div class="dashboard-content">
+
+                <p class="small">WELCOME TO</p>
+
+                <h1>Bryley</h1>
+
+                <p class="welcome">
+                    A little world made just for you ❤️
+                </p>
+
+                <div class="menu">
+
+                    <button onclick="showPoems()">
+                        📖 Poems
+                    </button>
+
+                    <button onclick="openSection('music')">
+                        🎵 Music
+                    </button>
+
+                    <button onclick="openSection('private')">
+                        🔐 Private
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
+
+
+// ===============================
+// NAVIGATION BUTTONS
+// ===============================
+
+function homeButton() {
+
+    return `
+        <div class="navigation">
+
+            <button onclick="showDashboard()">
+                🏠 Home
+            </button>
+
+        </div>
+    `;
+}
+
+
+function backButton() {
+
+    return `
+        <div class="navigation">
+
+            <button onclick="showPoems()">
+                ← Back to Poems
+            </button>
+
+            <button onclick="showDashboard()">
+                🏠 Home
+            </button>
+
+        </div>
+    `;
+}
+
+
+// ===============================
+// POEMS LIST
+// ===============================
+
+function showPoems() {
+
+    let poemCards = "";
+
+    poems.forEach((poem, index) => {
+
+        poemCards += `
+            <button
+                class="poem-button"
+                onclick="openPoem(${index})"
+            >
+                ${index + 1}. ${poem.title}
+            </button>
+        `;
+
+    });
+
+
+    document.body.innerHTML = `
+
+        <div class="page">
+
+            <div class="page-content">
+
+                <p class="small">
+                    WORDS FROM MY HEART
+                </p>
+
+                <h1>Poems</h1>
+
+                <div class="poem-list">
+
+                    ${poemCards}
+
+                </div>
+
+                ${homeButton()}
+
+            </div>
+
+        </div>
+    `;
+}
+
+
+// ===============================
+// INDIVIDUAL POEM
+// ===============================
+
+function openPoem(index) {
+
+    const poem = poems[index];
+
+
+    let navigationButtons = "";
+
+
+    // PREVIOUS BUTTON
+
+    if (index > 0) {
+
+        navigationButtons += `
+            <button
+                onclick="openPoem(${index - 1})"
+            >
+                ← Previous
+            </button>
+        `;
+
+    }
+
+
+    // NEXT BUTTON
+
+    if (index < poems.length - 1) {
+
+        navigationButtons += `
+            <button
+                onclick="openPoem(${index + 1})"
+            >
+                Next →
+            </button>
+        `;
+
+    }
+
+
+    document.body.innerHTML = `
+
+        <div class="page">
+
+            <div class="poem-content">
+
+                <p class="small">
+                    POEM ${index + 1} OF ${poems.length}
+                </p>
+
+                <h1>
+                    ${poem.title}
+                </h1>
+
+                <div class="poem-text">
+
+                    ${poem.text.replace(/\n/g, "<br><br>")}
+
+                </div>
+
+
+                <div class="poem-navigation">
+
+                    ${navigationButtons}
+
+                </div>
+
+
+                ${backButton()}
+
+            </div>
+
+        </div>
+    `;
+}
+
+
+// ===============================
+// OTHER SECTIONS
+// ===============================
+
+function openSection(section) {
+
+    if (section === "music") {
+
+        alert("🎵 Music section coming next!");
+
+    }
+
+    if (section === "private") {
+
+        alert("🔐 Private section coming next!");
+
+    }
+
+}
